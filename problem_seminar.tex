@@ -1,0 +1,88 @@
+
+\documentclass[11pt]{exam}
+\usepackage[utf8]{inputenc}
+\usepackage[IL2]{fontenc}
+\usepackage[czech]{babel}
+\usepackage{amsmath,amsfonts,amssymb,amsthm} 
+\usepackage{hyperref}
+\usepackage{indentfirst}
+
+\setlength\parindent{0pt} 
+
+\DeclareMathOperator{\s}{S}
+
+\newcommand{\R}{\mathcal{R}}
+
+\usepackage{xfrac}
+\usepackage{graphicx}
+
+\newcommand{\mysection}[1]{%
+  \par
+  \pagebreak[2]%
+  \refstepcounter{section}%
+    \everypar={%
+      {\setbox0=\lastbox}% Remove the indentation
+      \addcontentsline{toc}{section}{%
+        {\protect\makebox[0.3in][r]{\thesection.} \hspace*{3pt}#1}}%
+      \textbf{\thesection\space\space{#1}. }%
+      \everypar={}%
+    }%
+  \ignorespaces
+}
+
+
+
+\def\title#1{\medskip\centerline{\Large \textbf{#1}}}
+\def\endtitle{\centerline{\today}\par\medskip}
+
+
+\begin{document}
+
+\title{Variants of squarability problem}
+\endtitle
+
+In all versions let $\R$ denote a set of axis-parallel rectangles in $\mathbb{R}^2$ and $\s$ be a mapping from $\R$ to axis-parallel squares in $\mathbb{R}^2$ satisfying certain restrictions  (note that $\s$ might not exist). Then $\s(\R)$ is a set of squares obtained from $\R$ in a way specific to the particular variant and $\s(R)$ is the square representing the rectangle $R\in\R$. In each variant we explain the restrictions placed on the input set of rectangles $\R$ and on the output set of squares $\s(\R)$.\\
+
+There are four intersection types: Corner intersection, side-piercing, cross intersection and containment. We say $\R$ and $\s(\R)$ are \textit{combinatorially equivalent} if the intersection types are preserved and these intersection happen exactly on the same sides (and corners). For example, if $R_1,R_2\in\R$ have corner intersection that is in upper left corner on $R_1$ and lower right corner of $R_2$, the same must hold for $\s(R_1)$ and $\s(R_2)$.\\
+
+In all the variants here, we assume that the input set $\R$ contains no two rectangles with side-piercing or cross intersections.\\
+
+\mysection{Preserve order of all sides}
+The output $\s(\R)$ has to be combinatorially equivalent to $\R$ and the respective order of sides on both axes has to be preserved. On a chosen axis, we can contruct the sequence of sides of rectangles $\R$ from left to right as they appear, i.e. every rectangle will appear exactly twice. Then the same sequence of sides has to be realized in $\s(\R)$.
+
+\mysection{Combinatorial equivalence}
+The output $\s(\R)$ has to be combinatorially equivalent.\\
+
+We say that $\R$ and $\s(\R)$ are \textit{order equivalent}, if the cyclical order of intersecting rectangles around each rectangle is preserved in their images. Moreover, they are \textit{fixed-north-order equivalent} if the sequences of sides of intersecting rectangles constructed for each rectangle by starting in the upper right corner and walking counter-clockwise around the border of the rectangle and recording every side are also preserved in their images.\\
+
+\mysection{Fixed north} We require that $\R$ and $\s(\R)$ are fixed-north-order equivalent.
+
+\mysection{Preserve order} We require that $\R$ and $\s(\R)$ are  order equivalent.
+
+\mysection{Intersection types} The output $\s(\R)$ has to keep the intersection types.\\
+
+We say that $\R$ and $\s(\R)$ are \textit{intersection-pattern equivalent} if the following holds: $R_1\cap R_2\neq\emptyset$ if and only if $\s(R_1)\cap\s(R_2)\neq\emptyset$ for all $R_1,R_2\in\R$. Note that both combinatorial equivalence and order equivalence imply intersection-pattern equivalence.\\
+
+\mysection{Keep intersections, forbid side-piercing} We require intersection-pattern equivalence. Squares in the output set $\s(\R)$ must only have corner intersections or containment.
+
+\mysection{Keep intersections, allow side-piercing} We only require intersection-pattern equivalence.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document} 

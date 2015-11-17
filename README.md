@@ -1,1 +1,1 @@
-# SquarabilityStuff
+Problem seminar
